@@ -1,0 +1,21 @@
+{
+    "name": "print-message",
+    "version": "1.0.0",
+    "description": "NodeJS module for printing out beautiful messages in console",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ghaiklor/print-message.git"
+    },
+    "author": {
+        "name": "Eugene Obrezkov",
+        "email": "ghaiklor@gmail.com",
+        "url": "https://www.facebook.com/ghaiklor"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ghaiklor/print-message/issues"
+    },
+    "homepage": "https://github.com/ghaiklor/print-message"
+}

@@ -32,14 +32,7 @@ You can set your own options for border.
 var printMessage = require('print-message');
 
 printMessage([
-    "You can set your own options for border",
-    "borderColor",
-    "borderSymbol",
-    "sideSymbol",
-    "leftTopSymbol",
-    "leftBottomSymbol",
-    "rightTopSymbol",
-    "rightBottomSymbol"
+    "You can set your own options for border"
 ], {
     borderColor: 'green',
     borderSymbol: '│',

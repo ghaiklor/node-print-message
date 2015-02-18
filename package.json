@@ -17,5 +17,8 @@
     "bugs": {
         "url": "https://github.com/ghaiklor/print-message/issues"
     },
-    "homepage": "https://github.com/ghaiklor/print-message"
+    "homepage": "https://github.com/ghaiklor/print-message",
+    "dependencies": {
+        "chalk": "^0.5.1"
+    }
 }

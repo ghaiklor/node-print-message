@@ -4,6 +4,14 @@
     "description": "NodeJS module for printing out beautiful messages in console",
     "main": "index.js",
     "scripts": {},
+    "keywords": [
+        "print",
+        "log",
+        "message",
+        "console",
+        "beautiful",
+        "nice"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/ghaiklor/print-message.git"

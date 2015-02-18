@@ -14,7 +14,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/ghaiklor/print-message.git"
+        "url": "https://github.com/ghaiklor/node-print-message.git"
     },
     "author": {
         "name": "Eugene Obrezkov",
@@ -23,9 +23,9 @@
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ghaiklor/print-message/issues"
+        "url": "https://github.com/ghaiklor/node-print-message/issues"
     },
-    "homepage": "https://github.com/ghaiklor/print-message",
+    "homepage": "https://github.com/ghaiklor/node-print-message",
     "dependencies": {
         "chalk": "^0.5.1"
     }

@@ -1,20 +1,21 @@
 var printMessage = require('../');
 
 printMessage([
-    "You can set your own options for border",
-    "borderColor",
-    "borderSymbol",
-    "sideSymbol",
-    "leftTopSymbol",
-    "leftBottomSymbol",
-    "rightTopSymbol",
-    "rightBottomSymbol"
+    "You can set your own options for border"
 ], {
-    borderColor: 'green',
+    border: true,
+    borderColor: 'blue',
     borderSymbol: '│',
-    sideSymbol: '-',
+    sideSymbol: '│',
     leftTopSymbol: '└',
     leftBottomSymbol: '┌',
     rightTopSymbol: '┘',
-    rightBottomSymbol: '┐'
+    rightBottomSymbol: '┐',
+    marginTop: 3,
+    marginBottom: 3,
+    paddingTop: 2,
+    paddingBottom: 2,
+    printFn: function (message) {
+        process.stdout.write(message);
+    }
 });

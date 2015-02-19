@@ -67,6 +67,8 @@ printMessage([
 ]);
 ```
 
+![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6264371/33653d64-b82c-11e4-9f34-38b8e1249044.png)
+
 ### Print message with custom options
 
 ```javascript
@@ -94,6 +96,8 @@ printMessage([
 });
 ```
 
+![examples/options.js](https://cloud.githubusercontent.com/assets/3625244/6264374/346e27c0-b82c-11e4-9f0a-6f8d9173a9b1.png)
+
 ### Print message without border
 
 ```javascript
@@ -108,6 +112,8 @@ printMessage([
     marginBottom: 3
 });
 ```
+
+![examples/withoutBorder.js](https://cloud.githubusercontent.com/assets/3625244/6264373/345d5a94-b82c-11e4-925a-101ba5bf3673.png)
 
 ## License
 

@@ -36,19 +36,20 @@ var printMessage = require('print-message');
 printMessage([
     "You can set your own options for border"
 ], {
-    border: true,
-    borderColor: 'blue',
-    borderSymbol: '│',
-    sideSymbol: '│',
-    leftTopSymbol: '└',
-    leftBottomSymbol: '┌',
-    rightTopSymbol: '┘',
-    rightBottomSymbol: '┐',
-    marginTop: 3,
-    marginBottom: 3,
-    paddingTop: 2,
-    paddingBottom: 2,
+    border: true, // Enable border
+    borderColor: 'blue', // Border color is blue
+    borderSymbol: '│', // Symbol that uses for border
+    sideSymbol: '│', // Symbol that uses for side separators
+    leftTopSymbol: '└', // Symbol for left top corner
+    leftBottomSymbol: '┌', // Symbol for left bottom corner
+    rightTopSymbol: '┘', // Symbol for right top corner
+    rightBottomSymbol: '┐', // Symbol for right bottom corner
+    marginTop: 3, // Margin before border is begins
+    marginBottom: 3, // Margin after border is end
+    paddingTop: 2, // Padding top after border begins
+    paddingBottom: 2, // Padding bottom before border ends
     printFn: function (message) {
+        // Custom function that accepts generated message as argument and print it
         process.stdout.write(message);
     }
 });

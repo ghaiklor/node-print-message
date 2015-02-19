@@ -1,5 +1,7 @@
 # print-message
 
+[![npm version](https://badge.fury.io/js/print-message.svg)](http://badge.fury.io/js/print-message)
+
 NodeJS module for printing out beautiful messages in console.
 
 ## Installation

@@ -27,9 +27,7 @@ describe('Message', function () {
         assert.deepEqual(message.getConfig(), {
             marginTop: 0,
             marginBottom: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            printFn: console.log
+            printFn: process.stdout.write
         });
 
         message.setConfig({
@@ -53,6 +51,9 @@ describe('Message', function () {
         var BaseMessage = messages.BaseMessage;
 
         assert.equal(new BaseMessage('test').toString(), ' test \n');
+        assert.equal(new BaseMessage(['test', 'test2']).toString(), ' test \n test2 \n');
+        assert.equal(new BaseMessage('test', {marginTop: 2}), '\n\n test \n');
+        assert.equal(new BaseMessage('test', {marginBottom: 2}), ' test \n\n\n');
     });
 
     it('Should properly generate BorderedMessage string', function () {

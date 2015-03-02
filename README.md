@@ -4,6 +4,8 @@
 
 NodeJS module for printing out beautiful messages in console.
 
+![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6264371/33653d64-b82c-11e4-9f34-38b8e1249044.png)
+
 ## Installation
 
 Install `print-message` module:
@@ -19,11 +21,7 @@ Require `print-message` module and call function:
 ```javascript
 var printMessage = require('print-message');
 
-printMessage([
-    "Hello",
-    "It's the huge world",
-    "But width can be calculated automatically"
-]);
+printMessage('Hello, everyone');
 ```
 
 ## Options
@@ -38,6 +36,7 @@ printMessage([
     "Options below is default options"
 ], {
     border: true, // Enable border
+    textColor: 'white', // Text color
     borderColor: 'yellow', // Border color is yellow
     borderSymbol: '─', // Symbol that uses for border
     sideSymbol: '│', // Symbol that uses for side separators
@@ -45,15 +44,24 @@ printMessage([
     leftBottomSymbol: '└', // Symbol that uses for left bottom corner
     rightTopSymbol: '┐', // Symbol that uses for right top corner
     rightBottomSymbol: '┘', // Symbol that uses for right bottom corner
-    marginTop: 1, // Margin before border is begins
-    marginBottom: 1, // Margin after border is ends
+    marginTop: 0, // Margin before border is begins
+    marginBottom: 0, // Margin after border is ends
     paddingTop: 0, // Padding after border begins
     paddingBottom: 0, // Padding before border ends
-    printFn: console.log // Custom function for print generated message
+    printFn: process.stdout.write.bind(process.stdout) // Custom function for print generated message
 });
 ```
 
 ## Examples
+
+### Print default message
+
+```javascript
+var printMessage = require('print-message');
+printMessage();
+```
+
+![examples/defaultMessage.js](https://cloud.githubusercontent.com/assets/3625244/6447275/a0f60ac0-c119-11e4-8234-ff9ed99036b6.png)
 
 ### Print simple message
 
@@ -74,10 +82,9 @@ printMessage([
 ```javascript
 var printMessage = require('print-message');
 
-printMessage([
-    "You can set your own options for border"
-], {
+printMessage('You can set your own options for border', {
     border: true, // Enable border
+    textColor: 'green', // Text color
     borderColor: 'blue', // Border color is blue
     borderSymbol: '│', // Symbol that uses for border
     sideSymbol: '│', // Symbol that uses for side separators

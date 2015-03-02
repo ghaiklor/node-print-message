@@ -22,13 +22,15 @@ describe('Message', function () {
 
     it('Should properly get/set config to BaseMessage', function () {
         var BaseMessage = messages.BaseMessage,
-            message = new BaseMessage('test');
+            message = new BaseMessage('test', {
+                printFn: console.log
+            });
 
         assert.deepEqual(message.getConfig(), {
             textColor: 'white',
             marginTop: 0,
             marginBottom: 0,
-            printFn: process.stdout.write
+            printFn: console.log
         });
 
         message.setConfig({
@@ -62,7 +64,7 @@ describe('Message', function () {
     it('Should contains properly default config for BorderedMessage', function () {
         var BorderedMessage = messages.BorderedMessage;
 
-        assert.deepEqual(new BorderedMessage('test').getConfig(), {
+        assert.deepEqual(new BorderedMessage('test', {printFn: console.log}).getConfig(), {
             textColor: 'white',
             borderColor: 'yellow',
             borderSymbol: '─',
@@ -75,7 +77,7 @@ describe('Message', function () {
             paddingBottom: 0,
             marginTop: 0,
             marginBottom: 0,
-            printFn: process.stdout.write
+            printFn: console.log
         });
     });
 

@@ -1,8 +1,12 @@
 # Changelog
 
+## Version 1.2.1
+
+- Hotfix with default color in console;
+
 ## Version 1.2.0
 
-- Huge refactoring in code
+- Huge refactoring in code;
 
 ## Version 1.1.0
 

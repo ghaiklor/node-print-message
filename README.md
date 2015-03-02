@@ -36,7 +36,7 @@ printMessage([
     "Options below is default options"
 ], {
     border: true, // Enable border
-    textColor: 'white', // Text color
+    textColor: 'default', // Default text color from console
     borderColor: 'yellow', // Border color is yellow
     borderSymbol: '─', // Symbol that uses for border
     sideSymbol: '│', // Symbol that uses for side separators

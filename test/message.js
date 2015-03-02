@@ -27,7 +27,7 @@ describe('Message', function () {
             });
 
         assert.deepEqual(message.getConfig(), {
-            textColor: 'white',
+            textColor: 'default',
             marginTop: 0,
             marginBottom: 0,
             printFn: console.log
@@ -65,7 +65,7 @@ describe('Message', function () {
         var BorderedMessage = messages.BorderedMessage;
 
         assert.deepEqual(new BorderedMessage('test', {printFn: console.log}).getConfig(), {
-            textColor: 'white',
+            textColor: 'default',
             borderColor: 'yellow',
             borderSymbol: '─',
             sideSymbol: '│',

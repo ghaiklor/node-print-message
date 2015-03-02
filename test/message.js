@@ -1,5 +1,5 @@
 var assert = require('assert'),
-    messages = require('../lib/message');
+    messages = require('../lib/messages');
 
 describe('Message', function () {
     it('Should exists all types', function () {

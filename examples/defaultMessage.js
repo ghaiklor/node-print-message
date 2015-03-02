@@ -1,0 +1,2 @@
+var printMessage = require('../');
+printMessage();

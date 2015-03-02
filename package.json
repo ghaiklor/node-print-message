@@ -30,5 +30,8 @@
     "homepage": "https://github.com/ghaiklor/node-print-message",
     "dependencies": {
         "chalk": "^1.0.0"
+    },
+    "devDependencies": {
+        "mocha": "^2.1.0"
     }
 }

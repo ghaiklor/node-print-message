@@ -25,12 +25,14 @@ describe('Message', function () {
             message = new BaseMessage('test');
 
         assert.deepEqual(message.getConfig(), {
+            textColor: 'white',
             marginTop: 0,
             marginBottom: 0,
             printFn: process.stdout.write
         });
 
         message.setConfig({
+            textColor: 'black',
             marginTop: 1,
             marginBottom: 2,
             paddingTop: 3,
@@ -39,6 +41,7 @@ describe('Message', function () {
         });
 
         assert.deepEqual(message.getConfig(), {
+            textColor: 'black',
             marginTop: 1,
             marginBottom: 2,
             paddingTop: 3,
@@ -50,16 +53,17 @@ describe('Message', function () {
     it('Should properly generate BaseMessage string', function () {
         var BaseMessage = messages.BaseMessage;
 
-        assert.equal(new BaseMessage('test').toString(), ' test \n');
-        assert.equal(new BaseMessage(['test', 'test2']).toString(), ' test \n test2 \n');
-        assert.equal(new BaseMessage('test', {marginTop: 2}).toString(), '\n\n test \n');
-        assert.equal(new BaseMessage('test', {marginBottom: 2}).toString(), ' test \n\n\n');
+        assert(new BaseMessage('test').toString().match(/test/g));
+        assert(new BaseMessage(['test', 'test2']).toString().match(/test/g));
+        assert(new BaseMessage('test', {marginTop: 2}).toString().match(/test/g));
+        assert(new BaseMessage('test', {marginBottom: 2}).toString().match(/test/g));
     });
 
     it('Should contains properly default config for BorderedMessage', function () {
         var BorderedMessage = messages.BorderedMessage;
 
         assert.deepEqual(new BorderedMessage('test').getConfig(), {
+            textColor: 'white',
             borderColor: 'yellow',
             borderSymbol: '─',
             sideSymbol: '│',

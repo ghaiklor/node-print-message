@@ -4,7 +4,7 @@
 
 NodeJS module for printing out beautiful messages in console.
 
-![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6264371/33653d64-b82c-11e4-9f34-38b8e1249044.png)
+![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6447416/d9d646d8-c11a-11e4-8ffe-7aca05fe9ce5.png)
 
 ## Installation
 
@@ -61,7 +61,7 @@ var printMessage = require('print-message');
 printMessage();
 ```
 
-![examples/defaultMessage.js](https://cloud.githubusercontent.com/assets/3625244/6447275/a0f60ac0-c119-11e4-8234-ff9ed99036b6.png)
+![examples/defaultMessage.js](https://cloud.githubusercontent.com/assets/3625244/6447402/b1a493ae-c11a-11e4-8e33-f04cf0a2cffc.png)
 
 ### Print simple message
 
@@ -75,7 +75,7 @@ printMessage([
 ]);
 ```
 
-![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6264371/33653d64-b82c-11e4-9f34-38b8e1249044.png)
+![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6447416/d9d646d8-c11a-11e4-8ffe-7aca05fe9ce5.png)
 
 ### Print message with custom options
 
@@ -103,7 +103,7 @@ printMessage('You can set your own options for border', {
 });
 ```
 
-![examples/options.js](https://cloud.githubusercontent.com/assets/3625244/6264374/346e27c0-b82c-11e4-9f0a-6f8d9173a9b1.png)
+![examples/options.js](https://cloud.githubusercontent.com/assets/3625244/6447409/c4d2acae-c11a-11e4-93b7-7465793ba4d4.png)
 
 ### Print message without border
 
@@ -120,7 +120,7 @@ printMessage([
 });
 ```
 
-![examples/withoutBorder.js](https://cloud.githubusercontent.com/assets/3625244/6264373/345d5a94-b82c-11e4-925a-101ba5bf3673.png)
+![examples/withoutBorder.js](https://cloud.githubusercontent.com/assets/3625244/6447427/e818bf3c-c11a-11e4-97f5-5bb33a67349f.png)
 
 ## License
 

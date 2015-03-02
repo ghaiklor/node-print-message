@@ -1,6 +1,6 @@
 # print-message
 
-[![npm version](https://badge.fury.io/js/print-message.svg)](http://badge.fury.io/js/print-message)
+[![npm version](https://badge.fury.io/js/print-message.svg)](http://badge.fury.io/js/print-message) [![Build Status](https://travis-ci.org/ghaiklor/node-print-message.svg?branch=master)](https://travis-ci.org/ghaiklor/node-print-message)
 
 NodeJS module for printing out beautiful messages in console.
 

@@ -1,6 +1,6 @@
 # print-message
 
-![Build Status](https://img.shields.io/travis/ghaiklor/node-print-message.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/node-print-message.svg) ![Downloads](https://img.shields.io/npm/ghaiklor/node-print-message.svg) ![npm version](https://img.shields.io/npm/v/node-print-message.svg) ![dependencies](https://img.shields.io/david/ghaiklor/node-print-message.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/node-print-message.svg) ![License](https://img.shields.io/npm/l/node-print-message.svg)
+![Build Status](https://img.shields.io/travis/ghaiklor/node-print-message.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/node-print-message.svg) ![Downloads](https://img.shields.io/npm/dm/print-message.svg) ![npm version](https://img.shields.io/npm/v/print-message.svg) ![dependencies](https://img.shields.io/david/ghaiklor/node-print-message.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/node-print-message.svg) ![License](https://img.shields.io/npm/l/print-message.svg)
 
 NodeJS module for printing out beautiful messages in console.
 

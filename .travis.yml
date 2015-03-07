@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "0.10"
   - "0.12"
-after_script: "npm install coveralls && cat ./coverate/lcov.info | coveralls"
+after_script: "npm install coveralls && cat ./coverage/lcov.info | coveralls"

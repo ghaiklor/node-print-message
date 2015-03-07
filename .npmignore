@@ -1,2 +1,6 @@
+coverage
 examples
 test
+.editorconfig
+.gitignore
+.travis.yml

@@ -1,10 +1,11 @@
 {
     "name": "print-message",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "NodeJS module for printing out beautiful messages in console",
     "main": "index.js",
     "scripts": {
-        "test": "mocha --recursive"
+        "test": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly",
+        "prepublish": "npm test"
     },
     "keywords": [
         "print-message",
@@ -34,6 +35,7 @@
         "chalk": "^1.0.0"
     },
     "devDependencies": {
+        "istanbul": "^0.3.7",
         "mocha": "^2.1.0"
     }
 }

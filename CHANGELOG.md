@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 1.2.2
+
+- Add test coverage tool;
+- Add `.npmignore`;
+- Add NodeJS 0.10 to `.travis.yml`;
+
 ## Version 1.2.1
 
 - Hotfix with default color in console;

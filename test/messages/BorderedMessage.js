@@ -23,7 +23,13 @@ describe('messages:BorderedMessage', function () {
     it('Should properly generate BorderedMessage string', function () {
         assert(new BorderedMessage('test').toString().match(/test/g));
         assert(new BorderedMessage(['test', 'test2']).toString().match(/test/g));
-        assert.throws(new BorderedMessage('test', {borderColor: 'wrong'}), Error);
-        assert.throws(new BorderedMessage('test', {textColor: 'wrong'}), Error);
+
+        assert.throws(function () {
+            new BorderedMessage('test', {borderColor: 'wrong'}).toString();
+        }, Error);
+
+        assert.throws(function () {
+            new BorderedMessage('test', {textColor: 'wrong'}).toString();
+        }, Error);
     });
 });

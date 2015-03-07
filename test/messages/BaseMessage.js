@@ -55,7 +55,9 @@ describe('messages:BaseMessage', function () {
         assert(new BaseMessage(['test', 'test2']).toString().match(/test/g));
         assert(new BaseMessage('test', {marginTop: 2}).toString().match(/test/g));
         assert(new BaseMessage('test', {marginBottom: 2}).toString().match(/test/g));
-        assert.throws(new BaseMessage('test', {textColor: 'wrong'}), Error);
+        assert.throws(function () {
+            new BaseMessage('test', {textColor: 'wrong'}).toString();
+        }, Error);
     });
 
     it('Should properly print message', function () {

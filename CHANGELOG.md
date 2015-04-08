@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 1.4.0
+
+- Just typo fixes and styling of code;
+
 ## Version 1.3.0
 
 - Add test coverage tool;

@@ -1,41 +1,40 @@
 {
-    "name": "print-message",
-    "version": "1.3.0",
-    "description": "NodeJS module for printing out beautiful messages in console",
-    "main": "index.js",
-    "scripts": {
-        "test": "node ./node_modules/.bin/istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- --recursive --reporter spec",
-        "prepublish": "npm test"
-    },
-    "keywords": [
-        "print-message",
-        "print",
-        "log",
-        "message",
-        "border",
-        "console",
-        "beautiful",
-        "nice"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ghaiklor/node-print-message.git"
-    },
-    "author": {
-        "name": "Eugene Obrezkov",
-        "email": "ghaiklor@gmail.com",
-        "url": "https://www.facebook.com/ghaiklor"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ghaiklor/node-print-message/issues"
-    },
-    "homepage": "https://github.com/ghaiklor/node-print-message",
-    "dependencies": {
-        "chalk": "^1.0.0"
-    },
-    "devDependencies": {
-        "istanbul": "^0.3.7",
-        "mocha": "^2.1.0"
-    }
+  "name": "print-message",
+  "version": "1.4.0",
+  "description": "NodeJS module for printing out beautiful messages in console",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha"
+  },
+  "keywords": [
+    "print-message",
+    "print",
+    "log",
+    "message",
+    "border",
+    "console",
+    "beautiful",
+    "nice"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghaiklor/node-print-message.git"
+  },
+  "author": {
+    "name": "Eugene Obrezkov",
+    "email": "ghaiklor@gmail.com",
+    "url": "https://github.com/ghaiklor"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghaiklor/node-print-message/issues"
+  },
+  "homepage": "https://github.com/ghaiklor/node-print-message",
+  "dependencies": {
+    "chalk": "^1.0.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.7",
+    "mocha": "^2.1.0"
+  }
 }

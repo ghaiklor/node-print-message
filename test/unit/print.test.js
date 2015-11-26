@@ -9,10 +9,11 @@ describe('module:index', () => {
   });
 
   it('Should properly instantiate BaseMessage', () => {
-    assert(print(['test'], {border: false}) instanceof BaseMessage);
+    assert.instanceOf(print(['test'], {border: false}), BaseMessage);
   });
 
   it('Should properly instantiate BorderedMessage', () => {
-    assert(print(['test'], {border: true}) instanceof BorderedMessage);
+    assert.instanceOf(print(['test'], {border: true}), BorderedMessage);
+    assert.instanceOf(print(['test']), BorderedMessage);
   });
 });

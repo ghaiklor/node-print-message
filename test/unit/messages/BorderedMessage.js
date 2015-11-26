@@ -1,5 +1,5 @@
 var assert = require('assert');
-var BorderedMessage = require('.././messages/BorderedMessage');
+var BorderedMessage = require('BorderedMessage');
 
 describe('messages:BorderedMessage', function () {
   it('Should contains properly default config for BorderedMessage', function () {

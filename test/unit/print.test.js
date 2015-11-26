@@ -1,22 +1,18 @@
-var assert = require('assert');
-var BaseMessage = require('./messages/BaseMessage.test');
-var BorderedMessage = require('./messages/BorderedMessage.test');
-var print = require('../');
+import { assert } from 'chai';
+import { BaseMessage } from '../../src/messages/BaseMessage';
+import { BorderedMessage } from '../../src/messages/BorderedMessage';
+import printMessage from '../../src/print';
 
-describe('module:index', function () {
-  it('Should be a function', function () {
+describe('module:index', () => {
+  it('Should be a function', () => {
     assert.equal(typeof print, 'function');
   });
 
-  it('Should properly instantiate BaseMessage', function () {
-    assert(print(['test'], {
-      border: false
-    }) instanceof BaseMessage);
+  it('Should properly instantiate BaseMessage', () => {
+    assert(print(['test'], {border: false}) instanceof BaseMessage);
   });
 
-  it('Should properly instantiate BorderedMessage', function () {
-    assert(print(['test'], {
-      border: true
-    }) instanceof BorderedMessage);
+  it('Should properly instantiate BorderedMessage', () => {
+    assert(print(['test'], {border: true}) instanceof BorderedMessage);
   });
 });

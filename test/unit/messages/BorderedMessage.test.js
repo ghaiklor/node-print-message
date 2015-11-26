@@ -1,9 +1,9 @@
-var assert = require('assert');
-var BorderedMessage = require('BorderedMessage');
+import { assert } from 'chai';
+import { BorderedMessage } from '../../../src/messages/BorderedMessage';
 
-describe('messages:BorderedMessage', function () {
-  it('Should contains properly default config for BorderedMessage', function () {
-    assert.deepEqual(new BorderedMessage('test', {printFn: console.log}).getConfig(), {
+describe('messages:BorderedMessage', () => {
+  it('Should contains properly default config for BorderedMessage', () => {
+    assert.deepEqual(new BorderedMessage(['test'], {printFn: console.log}).getConfig(), {
       textColor: 'default',
       borderColor: 'yellow',
       borderSymbol: '─',
@@ -20,16 +20,11 @@ describe('messages:BorderedMessage', function () {
     });
   });
 
-  it('Should properly generate BorderedMessage string', function () {
-    assert(new BorderedMessage('test').toString().match(/test/g));
-    assert(new BorderedMessage(['test', 'test2']).toString().match(/test/g));
+  it('Should properly generate BorderedMessage string', () => {
+    assert.ok(new BorderedMessage(['test']).toString().match(/test/g));
+    assert.ok(new BorderedMessage(['test', 'test2']).toString().match(/test2/g));
 
-    assert.throws(function () {
-      new BorderedMessage('test', {borderColor: 'wrong'}).toString();
-    }, Error);
-
-    assert.throws(function () {
-      new BorderedMessage('test', {textColor: 'wrong'}).toString();
-    }, Error);
+    assert.throws(() => new BorderedMessage('test', {borderColor: 'wrong'}).toString(), Error);
+    assert.throws(() => new BorderedMessage('test', {textColor: 'wrong'}).toString(), Error);
   });
 });

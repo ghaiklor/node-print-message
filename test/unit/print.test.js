@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { BaseMessage } from '../../src/messages/BaseMessage';
 import { BorderedMessage } from '../../src/messages/BorderedMessage';
-import printMessage from '../../src/print';
+import print from '../../src/print';
 
 describe('module:index', () => {
   it('Should be a function', () => {

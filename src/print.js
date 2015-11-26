@@ -2,7 +2,8 @@ import { BaseMessage } from './messages/BaseMessage';
 import { BorderedMessage } from './messages/BorderedMessage';
 
 /**
- * Print messages to console
+ * Print messages to console.
+ *
  * @param {Array} _lines Array of lines
  * @param {Object} _config Additional params for print
  */

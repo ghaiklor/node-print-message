@@ -4,7 +4,7 @@ import { BorderedMessage } from '../../../src/messages/BorderedMessage';
 describe('messages:BorderedMessage', () => {
   it('Should contains properly default config for BorderedMessage', () => {
     assert.deepEqual(new BorderedMessage(['test'], {printFn: console.log}).getConfig(), {
-      textColor: 'default',
+      color: 'default',
       borderColor: 'yellow',
       borderSymbol: '─',
       sideSymbol: '│',
@@ -25,6 +25,6 @@ describe('messages:BorderedMessage', () => {
     assert.ok(new BorderedMessage(['test', 'test2']).toString().match(/test2/g));
 
     assert.throws(() => new BorderedMessage('test', {borderColor: 'wrong'}).toString(), Error);
-    assert.throws(() => new BorderedMessage('test', {textColor: 'wrong'}).toString(), Error);
+    assert.throws(() => new BorderedMessage('test', {color: 'wrong'}).toString(), Error);
   });
 });

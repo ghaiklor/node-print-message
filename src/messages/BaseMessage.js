@@ -56,7 +56,7 @@ export class BaseMessage {
    * @param {Array} lines
    * @returns {BaseMessage}
    */
-  setLines(lines) {
+  setLines(lines = []) {
     this._lines = lines.map(line => ` ${line} `);
     return this;
   }
@@ -77,7 +77,7 @@ export class BaseMessage {
    * @param {Object} config
    * @returns {BaseMessage}
    */
-  setConfig(config) {
+  setConfig(config = {}) {
     this._config = Object.assign(this._config, config);
     return this;
   }
@@ -115,7 +115,7 @@ export class BaseMessage {
    *
    * @returns {Number}
    */
-  static getTextLength() {
+  static getTextLength(string) {
     return string.replace(ANSI_REGEX, '').replace(ASTRAL_REGEX, ' ').length;
   }
 }

@@ -12,7 +12,6 @@ export class BorderedMessage extends BaseMessage {
     super(lines, config);
 
     this.setConfig({
-      border: true,
       borderColor: 'yellow',
       borderSymbol: '─',
       sideSymbol: '│',

@@ -8,9 +8,9 @@ import { BorderedMessage } from './messages/BorderedMessage';
  * @param {Object} config Additional params for print
  */
 export default function (lines, config) {
-  if (!!config.border) {
-    return new BorderedMessage(lines, config).print();
-  } else {
+  if (config.border === false) {
     return new BaseMessage(lines, config).print();
+  } else {
+    return new BorderedMessage(lines, config).print();
   }
 }

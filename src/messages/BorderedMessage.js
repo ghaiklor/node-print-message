@@ -1,78 +1,57 @@
-var util = require('util');
-var chalk = require('chalk');
-var pmUtil = require('../util');
-var BaseMessage = require('./BaseMessage');
+import chalk from 'chalk';
+import { BaseMessage } from './BaseMessage';
 
-util.inherits(BorderedMessage, BaseMessage);
+export class BorderedMessage extends BaseMessage {
+  constructor(lines, config) {
+    super(lines, config);
 
-/**
- * BorderedMessage constructor
- * @param {Array|String} lines Array of lines or one line
- * @param {Object} config Configuration object for bordered message
- * @constructor
- */
-function BorderedMessage(lines, config) {
-  BaseMessage.apply(this, arguments);
+    this.setConfig({
+      borderColor: 'yellow',
+      borderSymbol: '─',
+      sideSymbol: '│',
+      leftTopSymbol: '┌',
+      leftBottomSymbol: '└',
+      rightTopSymbol: '┐',
+      rightBottomSymbol: '┘',
+      paddingTop: 0,
+      paddingBottom: 0
+    });
+    this.setConfig(config);
+  }
+
+  toString() {
+    let lines = this.getLines();
+    let config = this.getConfig();
+    let message = '';
+
+    if (!chalk[config.borderColor]) throw new Error(`Color ${config.borderColor} is not supported`);
+    if (config.textColor !== 'default' && !chalk[config.textColor]) throw new Error(`Color ${config.color} is not supported`);
+
+    let maxWidth = Math.max.apply(Math, lines.map(line => BaseMessage.getTextLength(line)));
+
+    let data = lines.map(line => {
+      return {
+        text: line,
+        rest: maxWidth - pmUtil.getLength(line)
+      };
+    });
+
+    let topBorder = chalk[config.borderColor](config.leftTopSymbol + pmUtil.fillString(config.borderSymbol, maxWidth) + config.rightTopSymbol);
+    let sideSeparator = chalk[config.borderColor](config.sideSymbol);
+    let bottomBorder = chalk[config.borderColor](config.leftBottomSymbol + pmUtil.fillString(config.borderSymbol, maxWidth) + config.rightBottomSymbol);
+
+    message += '\n'.repeat(config.marginTop);
+    message += topBorder + '\n';
+    message += (sideSeparator + ' '.repeat(maxWidth) + sideSeparator + '\n').repeat(config.paddingTop);
+
+    for (let i = 0; i < data.length; i++) {
+      message += sideSeparator + (config.textColor !== 'default' ? chalk[config.textColor](data[i].text) : data[i].text) + ' '.repeat(data[i].rest) + sideSeparator + '\n';
+    }
+
+    message += (sideSeparator + ' '.repeat(maxWidth) + sideSeparator + '\n').repeat(config.paddingBottom);
+    message += bottomBorder + '\n';
+    message += '\n'.repeat(config.marginBottom);
+
+    return message;
+  }
 }
-
-/**
- * Override default configuration object for bordered messages
- */
-BorderedMessage.prototype._defaultConfig = pmUtil.assign(pmUtil.assign({}, BorderedMessage.prototype._defaultConfig), {
-  borderColor: 'yellow',
-  borderSymbol: '─',
-  sideSymbol: '│',
-  leftTopSymbol: '┌',
-  leftBottomSymbol: '└',
-  rightTopSymbol: '┐',
-  rightBottomSymbol: '┘',
-  paddingTop: 0,
-  paddingBottom: 0
-});
-
-/**
- * Override toString method for generating bordered message
- * @returns {String}
- */
-BorderedMessage.prototype.toString = function () {
-  var lines = this.getLines();
-  var config = this.getConfig();
-  var message = '';
-
-  if (!chalk[config.borderColor]) {
-    throw new Error('Color ' + config.borderColor + ' is not supported');
-  }
-
-  if (config.textColor !== 'default' && !chalk[config.textColor]) {
-    throw new Error('Color ' + config.textColor + ' is not supported');
-  }
-
-  var maxWidth = Math.max.apply(Math, lines.map(function (line) {
-    return pmUtil.getLength(line);
-  }));
-  var data = lines.map(function (line) {
-    return {
-      text: line,
-      rest: maxWidth - pmUtil.getLength(line)
-    };
-  });
-  var topBorder = chalk[config.borderColor](config.leftTopSymbol + pmUtil.fillString(config.borderSymbol, maxWidth) + config.rightTopSymbol);
-  var sideSeparator = chalk[config.borderColor](config.sideSymbol);
-  var bottomBorder = chalk[config.borderColor](config.leftBottomSymbol + pmUtil.fillString(config.borderSymbol, maxWidth) + config.rightBottomSymbol);
-
-  message += pmUtil.fillString('\n', config.marginTop);
-  message += topBorder + '\n';
-  message += pmUtil.fillString(sideSeparator + pmUtil.fillString(' ', maxWidth) + sideSeparator + '\n', config.paddingTop);
-
-  for (var i = 0; i < data.length; i++) {
-    message += sideSeparator + (config.textColor !== 'default' ? chalk[config.textColor](data[i].text) : data[i].text) + pmUtil.fillString(' ', data[i].rest) + sideSeparator + '\n'
-  }
-
-  message += pmUtil.fillString(sideSeparator + pmUtil.fillString(' ', maxWidth) + sideSeparator + '\n', config.paddingBottom);
-  message += bottomBorder + '\n';
-  message += pmUtil.fillString('\n', config.marginBottom);
-
-  return message;
-};
-
-module.exports = BorderedMessage;

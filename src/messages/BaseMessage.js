@@ -92,16 +92,10 @@ export class BaseMessage {
     let config = this.getConfig();
     let message = '';
 
-    if (config.color !== 'default' && !chalk[config.color]) {
-      throw new Error(`Color ${config.color} is not supported`);
-    }
+    if (config.color !== 'default' && !chalk[config.color]) throw new Error(`Color ${config.color} is not supported`);
 
     message += '\n'.repeat(config.marginTop);
-
-    for (var i = 0; i < lines.length; i++) {
-      message += config.color !== 'default' ? chalk[config.color](lines[i]) : lines[i] + '\n';
-    }
-
+    lines.reduce((message, line) => message + (config.color !== 'default' ? chalk[config.color](line) : line), message);
     message += '\n'.repeat(config.marginBottom);
 
     return message;
@@ -118,7 +112,7 @@ export class BaseMessage {
   }
 
   /**
-   * Calculates and returns corrent text length.
+   * Calculates and returns correct text length.
    *
    * @returns {Number}
    */

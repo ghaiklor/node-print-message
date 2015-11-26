@@ -1,5 +1,5 @@
 var assert = require('assert');
-var ansiRegex = require('../../lib/util/ansiRegex');
+var ansiRegex = require('.././util/ansiRegex');
 
 describe('util:ansiRegex', function () {
   it('Should be regex object', function () {

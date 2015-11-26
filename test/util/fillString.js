@@ -1,5 +1,5 @@
 var assert = require('assert');
-var fillString = require('../../lib/util/fillString');
+var fillString = require('.././util/fillString');
 
 describe('util:fillString', function () {
   it('Should properly fill string with symbols', function () {

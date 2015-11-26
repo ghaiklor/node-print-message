@@ -1,5 +1,5 @@
 var assert = require('assert');
-var getLength = require('../../lib/util/getLength');
+var getLength = require('.././util/getLength');
 
 describe('util:getLength', function () {
   it('Should properly get length of string', function () {

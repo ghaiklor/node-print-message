@@ -1,5 +1,5 @@
 var assert = require('assert');
-var util = require('../../lib/util');
+var util = require('.././util');
 
 describe('util:index', function () {
   it('Should have all util', function () {

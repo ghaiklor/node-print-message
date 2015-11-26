@@ -1,6 +1,6 @@
 var assert = require('assert');
-var BaseMessage = require('../lib/messages/BaseMessage');
-var BorderedMessage = require('../lib/messages/BorderedMessage');
+var BaseMessage = require('./messages/BaseMessage');
+var BorderedMessage = require('./messages/BorderedMessage');
 var print = require('../');
 
 describe('module:index', function () {

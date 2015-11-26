@@ -1,5 +1,5 @@
 var assert = require('assert');
-var BaseMessage = require('../../lib/messages/BaseMessage');
+var BaseMessage = require('.././messages/BaseMessage');
 
 describe('messages:BaseMessage', function () {
   it('Should properly get/set lines to BaseMessage', function () {

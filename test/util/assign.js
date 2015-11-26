@@ -1,5 +1,5 @@
 var assert = require('assert');
-var assign = require('../../lib/util/assign');
+var assign = require('.././util/assign');
 
 describe('util:assign', function () {
   it('Should properly assign objects', function () {

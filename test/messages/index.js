@@ -1,5 +1,5 @@
 var assert = require('assert');
-var messages = require('../../lib/messages');
+var messages = require('.././messages');
 
 describe('messages:index', function () {
   it('Should has all messages', function () {

@@ -1,1 +1,1 @@
-module.exports = require('./lib/print');
+module.exports = require('./src/print');

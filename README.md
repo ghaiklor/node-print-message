@@ -32,7 +32,7 @@ Require `print-message` module and call function:
 ```javascript
 var printMessage = require('print-message');
 
-printMessage('Hello, everyone');
+printMessage(['Hello, everyone']);
 ```
 
 ## Options
@@ -65,15 +65,6 @@ printMessage([
 
 ## Examples
 
-### Print default message
-
-```javascript
-var printMessage = require('print-message');
-printMessage();
-```
-
-![examples/defaultMessage.js](https://cloud.githubusercontent.com/assets/3625244/6447402/b1a493ae-c11a-11e4-8e33-f04cf0a2cffc.png)
-
 ### Print simple message
 
 ```javascript
@@ -93,7 +84,7 @@ printMessage([
 ```javascript
 var printMessage = require('print-message');
 
-printMessage('You can set your own options for border', {
+printMessage(['You can set your own options for border'], {
     border: true, // Enable border
     textColor: 'green', // Text color
     borderColor: 'blue', // Border color is blue

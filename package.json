@@ -34,7 +34,13 @@
     "chalk": "^1.0.0"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^1.1.4",
     "istanbul": "^0.3.7",
     "mocha": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

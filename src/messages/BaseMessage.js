@@ -1,3 +1,17 @@
+/**
+ * Regex for ANSI symbols.
+ *
+ * @type {RegExp}
+ */
+const ANSI_REGEX = /(?:(?:\u001b\[)|\u009b)(?:(?:[0-9]{1,3})?(?:(?:;[0-9]{0,3})*)?[A-M|f-m])|\u001b[A-M]/g;
+
+/**
+ * Regex for symbols that have length 2 when should be 1.
+ *
+ * @type {RegExp}
+ */
+const ASTRAL_REGEX = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+
 var chalk = require('chalk');
 var pmUtil = require('../util');
 
@@ -109,6 +123,15 @@ BaseMessage.prototype = {
   print: function () {
     this.getConfig('printFn')(this.toString());
     return this;
+  },
+
+  /**
+   * Get correct text length
+   * @param string
+   * @returns {*}
+   */
+  getTextLength: function (string) {
+    return string.replace(ANSI_REGEX, '').replace(ASTRAL_REGEX, ' ').length;
   }
 };
 

@@ -90,15 +90,14 @@ export class BaseMessage {
   toString() {
     let lines = this.getLines();
     let config = this.getConfig();
-    let message = '';
 
     if (config.color !== 'default' && !chalk[config.color]) throw new Error(`Color ${config.color} is not supported`);
 
-    message += '\n'.repeat(config.marginTop);
-    lines.reduce((message, line) => message + (config.color !== 'default' ? chalk[config.color](line) : line), message);
-    message += '\n'.repeat(config.marginBottom);
-
-    return message;
+    return [
+      '\n'.repeat(config.marginTop),
+      lines.reduce((message, line) => message + (config.color !== 'default' ? chalk[config.color](line) : line), ''),
+      '\n'.repeat(config.marginBottom)
+    ].join('');
   }
 
   /**

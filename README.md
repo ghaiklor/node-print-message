@@ -1,6 +1,17 @@
 # print-message
 
-![Build Status](https://img.shields.io/travis/ghaiklor/node-print-message.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/node-print-message.svg) ![Downloads](https://img.shields.io/npm/dm/print-message.svg) ![npm version](https://img.shields.io/npm/v/print-message.svg) ![dependencies](https://img.shields.io/david/ghaiklor/node-print-message.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/node-print-message.svg) ![License](https://img.shields.io/npm/l/print-message.svg)
+![Build Status](https://img.shields.io/travis/ghaiklor/node-print-message.svg)
+![Coverage](https://img.shields.io/coveralls/ghaiklor/node-print-message.svg)
+
+![Downloads](https://img.shields.io/npm/dm/print-message.svg)
+![Downloads](https://img.shields.io/npm/dt/print-message.svg)
+![npm version](https://img.shields.io/npm/v/print-message.svg)
+![License](https://img.shields.io/npm/l/print-message.svg)
+
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+![dependencies](https://img.shields.io/david/ghaiklor/node-print-message.svg)
+![dev dependencies](https://img.shields.io/david/dev/ghaiklor/node-print-message.svg)
 
 NodeJS module for printing out beautiful messages in console.
 

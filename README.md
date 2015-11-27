@@ -27,7 +27,7 @@ npm install print-message
 
 ## Getting Started
 
-Require `print-message` module and call function:
+Require `print-message` module and call a function:
 
 ```javascript
 var printMessage = require('print-message');

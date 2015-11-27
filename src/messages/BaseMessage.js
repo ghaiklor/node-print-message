@@ -53,7 +53,7 @@ export class BaseMessage {
   /**
    * Set lines that you want to print out.
    *
-   * @param {Array} lines
+   * @param {Array} [lines]
    * @returns {BaseMessage}
    */
   setLines(lines = []) {

@@ -21,7 +21,7 @@ describe('BorderedMessage', () => {
   });
 
   it('Should properly generate BorderedMessage string', () => {
-    assert.ok(new BorderedMessage(['test']).toString().match(/test/g));
+    assert.ok(new BorderedMessage(['test'], {color: 'black'}).toString().match(/test/g));
     assert.ok(new BorderedMessage(['test', 'test2']).toString().match(/test2/g));
 
     assert.throws(() => new BorderedMessage(['test'], {borderColor: 'wrong'}).toString(), Error, 'Color wrong is not supported');

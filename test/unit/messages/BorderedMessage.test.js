@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import { BorderedMessage } from '../../../src/messages/BorderedMessage';
 
-describe('messages:BorderedMessage', () => {
-  it('Should contains properly default config for BorderedMessage', () => {
+describe('BorderedMessage', () => {
+  it('Should contains default config for BorderedMessage', () => {
     assert.deepEqual(new BorderedMessage(['test'], {printFn: console.log}).getConfig(), {
       color: 'default',
       borderColor: 'yellow',
@@ -24,7 +24,7 @@ describe('messages:BorderedMessage', () => {
     assert.ok(new BorderedMessage(['test']).toString().match(/test/g));
     assert.ok(new BorderedMessage(['test', 'test2']).toString().match(/test2/g));
 
-    assert.throws(() => new BorderedMessage('test', {borderColor: 'wrong'}).toString(), Error);
-    assert.throws(() => new BorderedMessage('test', {color: 'wrong'}).toString(), Error);
+    assert.throws(() => new BorderedMessage(['test'], {borderColor: 'wrong'}).toString(), Error, 'Color wrong is not supported');
+    assert.throws(() => new BorderedMessage(['test'], {color: 'wrong'}).toString(), Error, 'Color wrong is not supported');
   });
 });

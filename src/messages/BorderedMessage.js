@@ -21,8 +21,7 @@ export class BorderedMessage extends BaseMessage {
       rightBottomSymbol: '┘',
       paddingTop: 0,
       paddingBottom: 0
-    });
-    this.setConfig(config);
+    }).setConfig(config);
   }
 
   /**
@@ -35,7 +34,8 @@ export class BorderedMessage extends BaseMessage {
     let config = this.getConfig();
     let message = '';
 
-    if (config.color !== 'default' && !chalk[config.color] && !chalk[config.borderColor]) throw new Error(`Color ${config.color} is not supported`);
+    if (config.color !== 'default' && !chalk[config.color]) throw new Error(`Color ${config.color} is not supported`);
+    if (config.borderColor !== 'default' && !chalk[config.borderColor]) throw new Error(`Color ${config.borderColor} is not supported`);
 
     let maxWidth = Math.max.apply(Math, lines.map(line => BaseMessage.getTextLength(line)));
 

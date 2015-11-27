@@ -95,7 +95,7 @@ export class BaseMessage {
 
     return [
       '\n'.repeat(config.marginTop),
-      lines.reduce((message, line) => message + (config.color !== 'default' ? chalk[config.color](line) : line), ''),
+      lines.reduce((message, line) => message + (config.color !== 'default' ? chalk[config.color](line) : line) + '\n', ''),
       '\n'.repeat(config.marginBottom)
     ].join('');
   }

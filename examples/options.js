@@ -1,8 +1,8 @@
-var printMessage = require('../');
+var printMessage = require('../lib/print');
 
-printMessage('You can set your own options', {
+printMessage(['You can set your own options'], {
   border: true,
-  textColor: 'green',
+  color: 'green',
   borderColor: 'blue',
   borderSymbol: '│',
   sideSymbol: '│',

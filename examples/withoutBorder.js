@@ -1,4 +1,4 @@
-var printMessage = require('../');
+var printMessage = require('../lib/print');
 
 printMessage([
   "This message will be without border",

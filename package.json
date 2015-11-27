@@ -1,5 +1,6 @@
 {
   "name": "print-message",
+  "version": "0.0.0-semantic-release",
   "description": "NodeJS module for printing out beautiful messages in console",
   "main": "lib/print.js",
   "scripts": {

@@ -22,9 +22,6 @@ const ASTRAL_REGEX = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
  * @version 2.0.0
  */
 export class BaseMessage {
-  _lines = [];
-  _config = {color: 'default', marginTop: 0, marginBottom: 0, printFn: process.stdout.write.bind(process.stdout)};
-
   /**
    * Creates new message instance.
    *
@@ -37,6 +34,14 @@ export class BaseMessage {
    * @param {Function} [config.printFn] Function that used to print transformed message
    */
   constructor(lines, config) {
+    this._lines = [];
+    this._config = {
+      color: 'default',
+      marginTop: 0,
+      marginBottom: 0,
+      printFn: process.stdout.write.bind(process.stdout)
+    };
+
     this.setLines(lines);
     this.setConfig(config);
   }

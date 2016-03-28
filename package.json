@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/ghaiklor/node-print-message",
   "dependencies": {
-    "chalk": "1.1.1"
+    "chalk": "1.1.2"
   },
   "devDependencies": {
     "babel-cli": "6.6.5",

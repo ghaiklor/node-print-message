@@ -1,6 +1,6 @@
 # print-message
 
-![Travis (.com)](https://img.shields.io/travis/com/ghaiklor/node-print-message)
+![Travis (.org)](https://img.shields.io/travis/ghaiklor/node-print-message)
 ![Codecov](https://img.shields.io/codecov/c/github/ghaiklor/node-print-message)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/print-message)
 ![npm](https://img.shields.io/npm/dm/print-message)

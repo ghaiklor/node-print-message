@@ -4,6 +4,7 @@
 ![Codecov](https://img.shields.io/codecov/c/github/ghaiklor/node-print-message)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/print-message)
 ![npm](https://img.shields.io/npm/dm/print-message)
+![npm](https://img.shields.io/npm/dt/print-message)
 ![NPM](https://img.shields.io/npm/l/print-message)
 
 [![GitHub followers](https://img.shields.io/github/followers/ghaiklor.svg?label=Follow&style=social)](https://github.com/ghaiklor)

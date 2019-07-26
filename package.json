@@ -1,6 +1,6 @@
 {
   "name": "print-message",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Node.js module for printing out beautiful messages in console",
   "main": "src/print.js",
   "license": "MIT",

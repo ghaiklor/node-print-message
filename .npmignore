@@ -3,3 +3,9 @@
 coverage
 examples
 test
+
+.editorconfig
+.eslintrc.json
+.nycrc.json
+.travis.yml
+README.md

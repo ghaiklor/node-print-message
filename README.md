@@ -11,7 +11,7 @@
 
 Node.js module for printing out beautiful messages in console.
 
-![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6447416/d9d646d8-c11a-11e4-8ffe-7aca05fe9ce5.png)
+![node-print-message demo](https://user-images.githubusercontent.com/3625244/61977223-8d5cde00-aff6-11e9-9c66-87416e9f4aef.gif)
 
 ## Installation
 

@@ -1,14 +1,22 @@
 {
   "name": "print-message",
-  "version": "0.0.0-semantic-release",
-  "description": "NodeJS module for printing out beautiful messages in console",
-  "main": "lib/print.js",
-  "scripts": {
-    "compile": "babel src --out-dir lib",
-    "coveralls": "cat coverage/lcov.info | coveralls",
-    "prepublish": "npm run compile",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
+  "version": "2.1.0",
+  "description": "Node.js module for printing out beautiful messages in console",
+  "main": "src/print.js",
+  "license": "MIT",
+  "homepage": "https://github.com/ghaiklor/node-print-message",
+  "author": {
+    "name": "Eugene Obrezkov",
+    "email": "ghaiklor@gmail.com",
+    "url": "https://github.com/ghaiklor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghaiklor/node-print-message.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ghaiklor/node-print-message/issues",
+    "email": "ghaiklor@gmail.com"
   },
   "keywords": [
     "print-message",
@@ -20,44 +28,42 @@
     "beautiful",
     "nice"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ghaiklor/node-print-message.git"
+  "directories": {
+    "example": "examples",
+    "lib": "src",
+    "test": "test"
   },
-  "author": {
-    "name": "Eugene Obrezkov",
-    "email": "ghaiklor@gmail.com",
-    "url": "https://github.com/ghaiklor"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ghaiklor/node-print-message/issues"
-  },
-  "homepage": "https://github.com/ghaiklor/node-print-message",
-  "dependencies": {
-    "chalk": "2.4.2"
-  },
-  "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-plugin-add-module-exports": "1.0.1",
-    "babel-preset-es2015": "6.24.1",
-    "chai": "4.1.1",
-    "coveralls": "3.0.5",
-    "cz-conventional-changelog": "3.0.0",
-    "isparta": "4.1.1",
-    "mocha": "6.2.0",
-    "semantic-release": "15.13.16",
-    "sinon": "7.3.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "engines": {
+    "node": ">=8.0.0"
   },
   "publishConfig": {
-    "tag": "latest"
+    "tag": "latest",
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
-  "release": {
-    "branch": "master"
+  "scripts": {
+    "build": "npm run lint && npm run test",
+    "commit": "git-cz",
+    "lint": "eslint .",
+    "postversion": "git push && git push --tags",
+    "preversion": "npm run build",
+    "test": "nyc mocha"
+  },
+  "dependencies": {
+    "kleur": "3.0.3"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "codecov": "3.5.0",
+    "eslint": "6.1.0",
+    "eslint-config-standard": "13.0.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-node": "9.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.0",
+    "git-cz": "3.2.1",
+    "mocha": "6.2.0",
+    "nyc": "14.1.1",
+    "sinon": "7.3.2"
   }
 }

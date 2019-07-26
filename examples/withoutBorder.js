@@ -1,8 +1,8 @@
-var printMessage = require('../lib/print');
+const printMessage = require('..');
 
 printMessage([
-  "This message will be without border",
-  "But you still can set marginTop and marginBottom"
+  'This message will be without border',
+  'But you still can set marginTop and marginBottom'
 ], {
   border: false,
   marginTop: 3,

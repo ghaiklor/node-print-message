@@ -1,4 +1,4 @@
-var printMessage = require('../lib/print');
+const printMessage = require('..');
 
 printMessage(['You can set your own options'], {
   border: true,
@@ -14,7 +14,5 @@ printMessage(['You can set your own options'], {
   marginBottom: 3,
   paddingTop: 2,
   paddingBottom: 2,
-  printFn: function (message) {
-    process.stdout.write(message);
-  }
+  printFn: (message) => process.stdout.write(message)
 });

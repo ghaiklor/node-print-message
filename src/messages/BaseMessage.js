@@ -1,17 +1,7 @@
-import chalk from 'chalk';
+const kleur = require('kleur');
 
-/**
- * Regex for ANSI symbols.
- *
- * @type {RegExp}
- */
+// eslint-disable-next-line no-control-regex
 const ANSI_REGEX = /(?:(?:\u001b\[)|\u009b)(?:(?:[0-9]{1,3})?(?:(?:;[0-9]{0,3})*)?[A-M|f-m])|\u001b[A-M]/g;
-
-/**
- * Regex for symbols that have length 2 when should be 1.
- *
- * @type {RegExp}
- */
 const ASTRAL_REGEX = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
 
 /**
@@ -21,7 +11,7 @@ const ASTRAL_REGEX = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
  * @since 2.0.0
  * @version 2.0.0
  */
-export class BaseMessage {
+class BaseMessage {
   /**
    * Creates new message instance.
    *
@@ -93,14 +83,16 @@ export class BaseMessage {
    * @returns {String}
    */
   toString() {
-    let lines = this.getLines();
-    let config = this.getConfig();
+    const lines = this.getLines();
+    const config = this.getConfig();
 
-    if (config.color !== 'default' && !chalk[config.color]) throw new Error(`Color ${config.color} is not supported`);
+    if (config.color !== 'default' && !kleur[config.color]) {
+      throw new Error(`Color ${config.color} is not supported`);
+    }
 
     return [
       '\n'.repeat(config.marginTop),
-      lines.reduce((message, line) => message + (config.color !== 'default' ? chalk[config.color](line) : line) + '\n', ''),
+      lines.reduce((message, line) => message + (config.color !== 'default' ? kleur[config.color](line) : line) + '\n', ''),
       '\n'.repeat(config.marginBottom)
     ].join('');
   }
@@ -124,3 +116,5 @@ export class BaseMessage {
     return string.replace(ANSI_REGEX, '').replace(ASTRAL_REGEX, ' ').length;
   }
 }
+
+module.exports = BaseMessage;

@@ -1,9 +1,9 @@
-import { assert } from 'chai';
-import { BorderedMessage } from '../../../src/messages/BorderedMessage';
+const { assert } = require('chai');
+const BorderedMessage = require('../../../src/messages/BorderedMessage');
 
 describe('BorderedMessage', () => {
   it('Should contains default config for BorderedMessage', () => {
-    assert.deepEqual(new BorderedMessage(['test'], {printFn: console.log}).getConfig(), {
+    assert.deepEqual(new BorderedMessage(['test'], { printFn: console.log }).getConfig(), {
       color: 'default',
       borderColor: 'yellow',
       borderSymbol: '─',
@@ -21,10 +21,10 @@ describe('BorderedMessage', () => {
   });
 
   it('Should properly generate BorderedMessage string', () => {
-    assert.ok(new BorderedMessage(['test'], {color: 'black'}).toString().match(/test/g));
+    assert.ok(new BorderedMessage(['test'], { color: 'black' }).toString().match(/test/g));
     assert.ok(new BorderedMessage(['test', 'test2']).toString().match(/test2/g));
 
-    assert.throws(() => new BorderedMessage(['test'], {borderColor: 'wrong'}).toString(), Error, 'Color wrong is not supported');
-    assert.throws(() => new BorderedMessage(['test'], {color: 'wrong'}).toString(), Error, 'Color wrong is not supported');
+    assert.throws(() => new BorderedMessage(['test'], { borderColor: 'wrong' }).toString(), Error, 'Color wrong is not supported');
+    assert.throws(() => new BorderedMessage(['test'], { color: 'wrong' }).toString(), Error, 'Color wrong is not supported');
   });
 });

@@ -1,5 +1,5 @@
-import { BaseMessage } from './messages/BaseMessage';
-import { BorderedMessage } from './messages/BorderedMessage';
+const BaseMessage = require('./messages/BaseMessage');
+const BorderedMessage = require('./messages/BorderedMessage');
 
 /**
  * Print messages to console.
@@ -7,10 +7,12 @@ import { BorderedMessage } from './messages/BorderedMessage';
  * @param {Array} lines Array of lines
  * @param {Object} [config] Additional params for print
  */
-export default function (lines, config = {}) {
+function print(lines, config = {}) {
   if (config.border === false) {
     return new BaseMessage(lines, config).print();
   } else {
     return new BorderedMessage(lines, config).print();
   }
 }
+
+module.exports = print;

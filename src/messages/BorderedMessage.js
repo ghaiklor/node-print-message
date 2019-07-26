@@ -1,5 +1,5 @@
-import chalk from 'chalk';
-import { BaseMessage } from './BaseMessage';
+const kleur = require('kleur');
+const BaseMessage = require('./BaseMessage');
 
 /**
  * Class responsible for printing out bordered messages
@@ -7,7 +7,7 @@ import { BaseMessage } from './BaseMessage';
  * @since 2.0.0
  * @version 2.0.0
  */
-export class BorderedMessage extends BaseMessage {
+class BorderedMessage extends BaseMessage {
   constructor(lines, config) {
     super(lines, config);
 
@@ -30,25 +30,32 @@ export class BorderedMessage extends BaseMessage {
    * @returns {String}
    */
   toString() {
-    let lines = this.getLines();
-    let config = this.getConfig();
-    let maxWidth = Math.max(...lines.map(line => BaseMessage.getTextLength(line)));
+    const lines = this.getLines();
+    const config = this.getConfig();
+    const maxWidth = Math.max(...lines.map(line => BaseMessage.getTextLength(line)));
 
-    if (config.color !== 'default' && !chalk[config.color]) throw new Error(`Color ${config.color} is not supported`);
-    if (config.borderColor !== 'default' && !chalk[config.borderColor]) throw new Error(`Color ${config.borderColor} is not supported`);
+    if (config.color !== 'default' && !kleur[config.color]) {
+      throw new Error(`Color ${config.color} is not supported`);
+    }
 
-    let topBorder = chalk[config.borderColor](config.leftTopSymbol + config.borderSymbol.repeat(maxWidth) + config.rightTopSymbol);
-    let sideSeparator = chalk[config.borderColor](config.sideSymbol);
-    let bottomBorder = chalk[config.borderColor](config.leftBottomSymbol + config.borderSymbol.repeat(maxWidth) + config.rightBottomSymbol);
+    if (config.borderColor !== 'default' && !kleur[config.borderColor]) {
+      throw new Error(`Color ${config.borderColor} is not supported`);
+    }
+
+    const topBorder = kleur[config.borderColor](config.leftTopSymbol + config.borderSymbol.repeat(maxWidth) + config.rightTopSymbol);
+    const sideSeparator = kleur[config.borderColor](config.sideSymbol);
+    const bottomBorder = kleur[config.borderColor](config.leftBottomSymbol + config.borderSymbol.repeat(maxWidth) + config.rightBottomSymbol);
 
     return [
       '\n'.repeat(config.marginTop),
       topBorder + '\n',
       (sideSeparator + ' '.repeat(maxWidth) + sideSeparator + '\n').repeat(config.paddingTop),
-      lines.reduce((message, line) => message + sideSeparator + (config.color !== 'default' ? chalk[config.color](line) : line) + ' '.repeat(maxWidth - BaseMessage.getTextLength(line)) + sideSeparator + '\n', ''),
+      lines.reduce((message, line) => message + sideSeparator + (config.color !== 'default' ? kleur[config.color](line) : line) + ' '.repeat(maxWidth - BaseMessage.getTextLength(line)) + sideSeparator + '\n', ''),
       (sideSeparator + ' '.repeat(maxWidth) + sideSeparator + '\n').repeat(config.paddingBottom),
       bottomBorder + '\n',
       '\n'.repeat(config.marginBottom)
     ].join('');
   }
 }
+
+module.exports = BorderedMessage;

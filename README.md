@@ -1,19 +1,15 @@
 # print-message
 
-![Build Status](https://img.shields.io/travis/ghaiklor/node-print-message.svg)
-![Coverage](https://img.shields.io/coveralls/ghaiklor/node-print-message.svg)
+![Travis (.com)](https://img.shields.io/travis/com/ghaiklor/node-print-message)
+![Codecov](https://img.shields.io/codecov/c/github/ghaiklor/node-print-message)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/print-message)
+![npm](https://img.shields.io/npm/dm/print-message)
+![NPM](https://img.shields.io/npm/l/print-message)
 
-![Downloads](https://img.shields.io/npm/dm/print-message.svg)
-![Downloads](https://img.shields.io/npm/dt/print-message.svg)
-![npm version](https://img.shields.io/npm/v/print-message.svg)
-![License](https://img.shields.io/npm/l/print-message.svg)
+[![GitHub followers](https://img.shields.io/github/followers/ghaiklor.svg?label=Follow&style=social)](https://github.com/ghaiklor)
+[![Twitter Follow](https://img.shields.io/twitter/follow/ghaiklor.svg?label=Follow&style=social)](https://twitter.com/ghaiklor)
 
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-![dependencies](https://img.shields.io/david/ghaiklor/node-print-message.svg)
-![dev dependencies](https://img.shields.io/david/dev/ghaiklor/node-print-message.svg)
-
-NodeJS module for printing out beautiful messages in console.
+Node.js module for printing out beautiful messages in console.
 
 ![examples/simple.js](https://cloud.githubusercontent.com/assets/3625244/6447416/d9d646d8-c11a-11e4-8ffe-7aca05fe9ce5.png)
 
@@ -22,7 +18,7 @@ NodeJS module for printing out beautiful messages in console.
 Install `print-message` module:
 
 ```bash
-npm install print-message
+npm install --save print-message
 ```
 
 ## Getting Started
@@ -30,7 +26,7 @@ npm install print-message
 Require `print-message` module and call a function:
 
 ```javascript
-var printMessage = require('print-message');
+const printMessage = require('print-message');
 
 printMessage(['Hello, everyone']);
 ```
@@ -40,7 +36,7 @@ printMessage(['Hello, everyone']);
 You can set your own options for border.
 
 ```javascript
-var printMessage = require('print-message');
+const printMessage = require('print-message');
 
 printMessage([
     "You can set your own options for border",
@@ -68,7 +64,7 @@ printMessage([
 ### Print simple message
 
 ```javascript
-var printMessage = require('print-message');
+const printMessage = require('print-message');
 
 printMessage([
     "Hello",
@@ -82,7 +78,7 @@ printMessage([
 ### Print message with custom options
 
 ```javascript
-var printMessage = require('print-message');
+const printMessage = require('print-message');
 
 printMessage(['You can set your own options for border'], {
     border: true, // Enable border
@@ -110,7 +106,7 @@ printMessage(['You can set your own options for border'], {
 ### Print message without border
 
 ```javascript
-var printMessage = require('print-message');
+const printMessage = require('print-message');
 
 printMessage([
     "This message will be without border",
@@ -126,24 +122,4 @@ printMessage([
 
 ## License
 
-The MIT License (MIT)
-
-Copyright (c) 2015 Eugene Obrezkov
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+[The MIT License (MIT)](./LICENSE)

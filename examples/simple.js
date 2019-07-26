@@ -1,7 +1,7 @@
-var printMessage = require('../lib/print');
+const printMessage = require('..');
 
 printMessage([
-  "Hello",
-  "It's a huge world",
-  "But width can be calculated automatically"
+  'Hello',
+  'It is a huge world',
+  'But width can be calculated automatically'
 ]);
